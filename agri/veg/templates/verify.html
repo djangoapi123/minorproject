@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .iteams{
+            width:200px;
+            height:300px;
+            background-color: bisque;
+            margin:50px;
+            min-width: 300px;
+        
+        }
+
+        .iteams:hover{
+            width:400px;
+            height:400px;
+            background-color: rgb(214, 136, 40);
+            margin:50px
+        }
+        
+
+            .home{
+display: flex;
+flex-wrap:wrap;
+
+            }
+
+            
+    </style>
+</head>
+<body>
+    <h1>home page </h1>
+    <div class="home">
+        <div class="nav"></div>
+        {% for i in product %}
+
+        <div class="iteams">
+            <h1>{{ i.na }}</h1>
+            <p>{{ i.id }} </p>
+            <p>{{ i.dis }} </p>
+            <p>{{ i.loc }}</p>
+            <p>{{ i.sn }} </p>
+            <p>{{ i.pr }} </p>
+            <p>{{ i.da }} </p>
+            
+            <p></p>
+        </div>
+        {% endfor %} 
+
+        
+    </div>
+
+
+    {{ key }} 
+    
+    <form action="" method="post">
+
+
+
+        
+
+        {% csrf_token %}
+            
+        
+        <input type="text" name="na" placeholder="Name Of The Product">
+           
+        
+        <input type="date" name="da" placeholder="expery date Of The Product">
+                <input type="text" name="qa" placeholder="QuantityOf The Product">
+                <input type="text" name="loc" placeholder="Location Of The Product">
+                <input type="text" name="sn" placeholder="Name Of The Seller">
+                <input type="number" name="ph" placeholder="Phone Number  Of The Seller">
+                <input type="number" name="pr" placeholder="Price Of The Product">
+                <input type="submit" value="submit">
+                <br>
+                <input type="text" name="name" placeholder="Name">
+                <input type="submit" value="submit">
+            </form>
+            
+</body>
+</html>

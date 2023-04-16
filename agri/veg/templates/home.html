@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .iteams{
+            width:200px;
+            height:300px;
+            background-color: bisque;
+            margin:50px;
+            min-width: 300px;
+        
+        }
+
+        .iteams:hover{
+            width:400px;
+            height:400px;
+            background-color: rgb(214, 136, 40);
+            margin:50px
+        }
+        
+
+            .home{
+display: flex;
+flex-wrap:wrap;
+
+            }
+                  
+            .cta {
+  border: none;
+  background: none;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}  
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  min-height: 50px;
+  max-width: 150px;
+  padding: 0 1rem;
+  color: #3a3636;
+  font-size: 15px;
+  border: 1px solid #5e4dcd;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #5e4dcd;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.button--submit:hover {
+  background-color: #5e5dcd;
+}
+
+.input:focus, .input:focus-visible {
+  border-color: #3898EC;
+  outline: none;
+}
+
+
+.home{
+  display: block;
+}
+
+
+.nav{
+  display: flex;
+}
+.input-group{
+  margin:50px;
+}
+button {
+ position: relative;
+ padding: 1em 1.8em;
+ outline: none;
+ border: 1px solid #303030;
+ background: #212121;
+ color: #ae00ff;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ font-size: 15px;
+ overflow: hidden;
+ transition: 0.2s;
+ border-radius: 20px;
+ cursor: pointer;
+ font-weight: bold;
+}
+
+button:hover {
+ box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+ transition-delay: 0.6s;
+}
+
+button span {
+ position: absolute;
+}
+
+button span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(1) {
+ left: 100%;
+ transition: 0.7s;
+}
+
+button span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(3) {
+ right: 100%;
+ transition: 0.7s;
+ transition-delay: 0.35s;
+}
+
+button span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+button:hover span:nth-child(2) {
+ top: 100%;
+ transition: 0.7s;
+ transition-delay: 0.17s;
+}
+
+button span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(4) {
+ bottom: 100%;
+ transition: 0.7s;
+ transition-delay: 0.52s;
+}
+
+button:active {
+ background: #ae00af;
+ background: linear-gradient(to top right, #ae00af, #001eff);
+ color: #bfbfbf;
+ box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+ transition: 0.1s;
+}
+
+button:active span:nth-child(1) 
+span:nth-child(2) 
+span:nth-child(2) 
+span:nth-child(2) {
+ transition: none;
+ transition-delay: none;
+}
+
+
+
+hr{
+    border: 7px solid black;
+}
+    </style>
+</head>
+<body>
+    <h1>home page </h1>
+    <div class="home">
+        <div class="nav">
+
+
+
+          <!-- <form class="form">
+
+            {% csrf_token %}
+           <div class="input-container">
+               <input placeholder="Enter text" type="text" name="s1">
+              <button class="submit" type="submit" >
+             Sign in
+           </button>
+     </div>
+        </form> -->
+     
+        
+    </div>
+    <br><br>
+        {% for i in product %}
+
+        <div class="iteams">
+            <h1>{{ i.p_na }}</h1>
+            <p>{{ i.p_id }} </p>
+            <p>{{ i.p_dis }} </p>
+            <p>{{ i.p_loc }}</p>
+            <p>{{ i.p_sn }} </p>
+            <p>{{ i.p_pr }} </p> 
+            <p>{{  i.p_da }} </p> 
+            <a href="{% url 'detail' id=i.p_id %}">
+              <button class="cta">
+                  <span class="hover-underline-animation"> Shop now </span>
+                  <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                      <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                  </svg>
+              </button>
+              </a>
+
+        </div>
+
+        {% endfor %} 
+
+        
+    </div>
+
+    <br>
+    <hr>
+    <a href="{% url 'main'  %}">
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>   BACK
+      </button>
+  </a>
+  <a href="{% url 'form'  %}">
+    <button>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span> 
+
+
+       ADD THE MARKET ITEM
+    </button>
+</a>
+</body>
+</html>
